@@ -20,6 +20,8 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: elephant42_left
+    shield: claw44_L
   - board: nice_nano_v2
-    shield: elephant42_right
+    shield: claw44_R
+  - board: nice_nano_v2
+    shield: settings_reset
