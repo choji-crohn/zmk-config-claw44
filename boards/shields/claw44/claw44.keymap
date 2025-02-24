@@ -148,20 +148,6 @@
         };
 
         lower {
-<<<<<<< HEAD
-/* -------------------------------------------------------------   -------------------------------------------------------------
-   |MACRO_1_2|         |         |    F8   |  Ctrl+Y |         |   | MACRO_3 |         |         |         |  PSCRN  |   INS   |
-   |   CAPS  |    !    |    @    |    #    |    $    |    %    |   |   LEFT  |   DOWN  |    UP   |  RIGHT  |    {    |    }    |
-   |         |    ^    |    &    |    (    |    )    |    ~    |   |   HOME  |  PG_DN  |  PG_UP  |   END   |    |    |   APP   |
-   --------------------|  ENTER  |   DEL   |         |BSPC CTL |   | DEL CTL |  adjust |HENK SFT |  UP SFT |--------------------
-                        -----------------------------------------   -----------------------------------------
-*/
-            bindings = <
-    MACRO_1_2      &none         &none        &kp F8       &kp LC(Y)    &none             &macro_3  &none      &none      &none      &kp PSCRN    &kp INS
-    &kp LS(CAPS)   &kp EXCL      &kp JP_AT    &kp HASH     &kp DLLR     &kp PRCNT         &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp JP_LBKT  &kp JP_RBKT
-    &kp LC(LS(A))  &kp JP_CARET  &kp JP_AMPS  &kp JP_LPAR  &kp JP_RPAR  &kp JP_TILDE      &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp JP_PIPE  &kp K_APP
-                                 &kp ENTER    &kp DEL      &trans       &trans            &trans    &mo ADJT   &trans     &none
-=======
 /*  -------------------------------------------------------------   -------------------------------------------------------------
     |MACRO_1_2|         |         |    F8   |  Ctrl+Y |         |   | MACRO_3 |         |         |         |  PSCRN  |   INS   |
     |   CAPS  |    !    |    @    |    #    |    $    |    %    |   |   LEFT  |   DOWN  |    UP   |  RIGHT  |    {    |    }    |
@@ -174,26 +160,16 @@
      &kp LS(CAPS)   &kp EXCL      &kp JP_AT    &kp HASH     &kp DLLR     &kp PRCNT         &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp JP_LBKT  &kp JP_RBKT
      &kp LC(LS(A))  &kp JP_CARET  &kp JP_AMPS  &kp JP_LPAR  &kp JP_RPAR  &kp JP_TILDE      &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp JP_PIPE  &kp K_APP
                                   &kp ENTER    &kp DEL      &trans       &trans            &trans    &mo ADJT   &trans     &none
->>>>>>> develop
             >;
         };
 
         raise {
-<<<<<<< HEAD
-/* -------------------------------------------------------------   -------------------------------------------------------------
-   |    F1   |    F2   |    F3   |    F4   |    F5   |    F6   |   |    `    |    =    |    +    |  ASTER  |    /    |    -    |
-   |         |    1    |    2    |    3    |    4    |    5    |   |    6    |    7    |    8    |    9    |    0    |    \    |
-   |  F7 GUI |    F8   |    F9   |   F10   |   F11   |   F12   |   |    [    |    ]    |    ,    |    .    |         |         |
-   --------------------|         |         |  adjust |BSPC CTL |   | DEL CTL |         |         |         |--------------------
-                       -----------------------------------------   -----------------------------------------
-=======
 /*  -------------------------------------------------------------   -------------------------------------------------------------
     |    F1   |    F2   |    F3   |    F4   |    F5   |    F6   |   |    `    |    =    |    +    |  ASTER  |    /    |    -    |
     |         |    1    |    2    |    3    |    4    |    5    |   |    6    |    7    |    8    |    9    |    0    |    \    |
     |  F7 GUI |    F8   |    F9   |   F10   |   F11   |   F12   |   |    [    |    ]    |    ,    |    .    |         |         |
     --------------------|         |         |  adjust |BSPC CTL |   | DEL CTL |         |         |         |--------------------
                         -----------------------------------------   -----------------------------------------
->>>>>>> develop
 */
             bindings = <
     &kp F1       &kp F2  &kp F3  &kp F4   &kp F5    &kp F6       &kp JP_GRV   &kp JP_EQL   &kp JP_PLUS  &kp JP_ASTR  &kp FSLH  &kp KP_MINUS
@@ -204,20 +180,6 @@
         };
 
         adjust {
-<<<<<<< HEAD
-/* -------------------------------------------------------------   -------------------------------------------------------------
-   |         |         |         |         |         |         |   |         |    7    |    8    |    9    |         |         |
-   |  BT_CLR |         |         |         |         |         |   |         |    4    |    5    |    6    |         |         |
-   |  BT_NXT |         |         |         |         |         |   |    0    |    1    |    2    |    3    |         |         |
-   --------------------|         |         |         |BSPC CTL |   | DEL CTL |    ,    |    .    |         |--------------------
-                       -----------------------------------------   -----------------------------------------
-*/
-            bindings = <
-    &none       &none  &none  &none  &none   &none       &none      &kp KP_N7  &kp KP_N8  &kp KP_N9  &none  &none
-    &bt BT_CLR  &none  &none  &none  &none   &none       &none      &kp KP_N4  &kp KP_N5  &kp KP_N6  &none  &none
-    &bt BT_NXT  &none  &none  &none  &none   &none       &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &none  &none
-                       &none  &none  &trans  &trans      &trans     &trans     &kp COMMA  &kp DOT
-=======
 /*  -------------------------------------------------------------   -------------------------------------------------------------
     | SOFT_OFF| SCRL_UP |  RCLK   |   UP    |  LCLK   |         |   |         |    7    |    8    |    9    | RGB_TOG | RGB_EFF |
     |  BT_CLR | SCRL_DW |  LEFT   |  DOWN   |  RIGHT  |         |   |         |    4    |    5    |    6    | RGB_HUI | RGB_BRI |
@@ -230,7 +192,6 @@
     &bt BT_CLR  &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none       &none      &kp KP_N4  &kp KP_N5  &kp KP_N6  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI
     &bt BT_NXT  &none           &none           &none           &none            &none       &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD
                                 &none  &none    &trans          &trans           &trans      &trans     &kp COMMA  &kp DOT
->>>>>>> develop
             >;
         };
     };
