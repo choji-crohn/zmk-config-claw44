@@ -1,0 +1,14 @@
+file_format: "1"
+id: claw44
+name: Claw44-ZMK
+type: shield
+url: https://github.com/illness072/claw44
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+  - underglow
+siblings:
+  - claw44_L
+  - claw44_R
