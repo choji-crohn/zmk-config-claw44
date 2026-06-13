@@ -6,7 +6,7 @@ This is my personal [zmk-config](https://zmk.dev/) for my [claw44](https://githu
 - MOUSE KEY
 - SLEEP
 - SOFT OFF
-- RGB UNDERGLOW for WS2812 STRIP
+- RGB UNDERGLOW for WS2812 STRIP with Vcc off when soft off
 - INDICATOR LED WIDGET for nice!nano v2
 
 ## Modules

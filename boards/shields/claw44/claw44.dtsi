@@ -38,6 +38,22 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)    RC(2,6) RC(2,7) RC(2,8) RC(2,
             ;
 
     };
+
+    // 1. P0.13を電源制御スイッチとして定義
+    vcc_switch: vcc_switch {
+        compatible = "zmk,gpio-on-off";
+        label = "VCC_SWITCH";
+        status = "okay";
+        gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
+    };
+
+    // 2. ZMKの外部電源管理に上記スイッチを紐付け
+    ext-power {
+        compatible = "zmk,ext-power-generic";
+        control-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
+        init-delay-ms = <50>;
+    };
+
 };
 
 &pro_micro_i2c {

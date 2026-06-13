@@ -40,16 +40,16 @@
 #define JP_YEN   INT1      // yen
 
 /* the following lines are for shortening keymap section */
-#define TCR_NG_NX &tcr_ng_nx &kp &kp
-#define OCL_PSCR  &mt LG(LS(T)) LG(LS(S))
-#define A_DWN     &mt LALT DOWN
-#define S_MUHN    &mt LSHFT JP_MUHN
-#define L_SPC     &lt LOWR SPACE
-#define C_BS      &mt LCTRL BSPC
-#define C_DEL     &mt RCTRL DEL
-#define R_ENT     &lt RAIS ENTER
-#define S_HENK    &mt RSHFT JP_HENK
-#define A_UP      &mt RALT UP
+#define TCR_DWG_FAM &tcr_dwg_fam &kp &kp
+#define OCL_PSCR    &mt LG(LS(T)) LG(LS(S))
+#define A_DWN       &mt LALT DOWN
+#define S_MUHN      &mt LSHFT JP_MUHN
+#define L_SPC       &lt LOWR SPACE
+#define C_BS        &mt LCTRL BSPC
+#define C_DEL       &mt RCTRL DEL
+#define R_ENT       &lt RAIS ENTER
+#define S_HENK      &mt RSHFT JP_HENK
+#define A_UP        &mt RALT UP
 
 &lt {
     quick-tap-ms = <170>;
@@ -65,53 +65,83 @@
 
 / {
     macros {
-        ZMK_MACRO(tcr_fam,
-            wait-ms = <300>;
+        ZMK_MACRO(win_id,
+            wait-ms = <20>;
             tap-ms = <40>;
             bindings
-                = <&kp LS(TAB)>
-                , <&macro_wait_time 1000>
-                , <&kp HOME>
-                , <&macro_wait_time 300>
-                , <&kp TAB &kp END>    
+                = <&kp LC(LA(DEL))>
+                , <&macro_wait_time 2000>
+                , <&kp DEL>
+                , <&macro_wait_time 20>
+                , <&kp ENTER>
                 ;
         )
-        
-        ZMK_MACRO(tcr_nx,
-            wait-ms = <300>;
+
+        ZMK_MACRO(tcr_fam,
+            wait-ms = <30>;
             tap-ms = <40>;
             bindings
-                = <&kp LS(TAB)>
-                , <&macro_wait_time 30>
-                , <&kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB)>
+                = <&kp LS(TAB) &kp LS(TAB)>
                 , <&macro_wait_time 3000>
-                , <&kp ENTER>
-                , <&macro_wait_time 50>
-                , <&kp LS(TAB) &kp LS(TAB)>
-                , <&macro_wait_time 1000>
                 , <&kp HOME>
+                ;
+        )
+
+       ZMK_MACRO(tcr_dwg,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings
+                = <&kp LS(TAB) &kp LS(TAB)>
+                , <&macro_wait_time 3000>
+                , <&kp END>
+                ;
+        )
+
+        ZMK_MACRO(tcr_nx,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings
+                = <&kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB)>
+                , <&macro_wait_time 1000>
+                , <&kp ENTER>
                 , <&macro_wait_time 30>
-                , <&kp TAB &kp END>  
+                , <&mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000)>
+                , <&macro_wait_time 400>
+                , <&mmv MOVE_Y(30000)>
+                , <&macro_wait_time 30>
+                , <&mkp LCLK>
+                , <&kp LS(TAB) &kp LS(TAB)>
+                , <&macro_wait_time 3000>
+                , <&kp END>
+                , <&macro_wait_time 30>
+                , <&kp TAB &kp HOME>
+                , <&mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000)>
                 ;
         )
 
         ZMK_MACRO(tcr_ng,
-            wait-ms = <300>;
+            wait-ms = <30>;
             tap-ms = <40>;
             bindings
-                = <&kp LS(TAB)>
-                , <&macro_wait_time 100>
+                = <&macro_wait_time 300>
+                , <&kp LS(TAB)>
+                , <&macro_wait_time 30>
                 , <&kp SPACE>
-                , <&macro_wait_time 30>
                 , <&kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB)>
-                , <&macro_wait_time 3000>
-                , <&kp ENTER>
-                , <&macro_wait_time 50>
-                , <&kp LS(TAB) &kp LS(TAB)>
                 , <&macro_wait_time 1000>
-                , <&kp HOME>
+                , <&kp ENTER>
                 , <&macro_wait_time 30>
-                , <&kp TAB &kp END>
+                , <&mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000)>
+                , <&macro_wait_time 400>
+                , <&mmv MOVE_Y(30000)>
+                , <&macro_wait_time 30>
+                , <&mkp LCLK>
+                , <&kp LS(TAB) &kp LS(TAB)>
+                , <&macro_wait_time 3000>
+                , <&kp END>
+                , <&macro_wait_time 30>
+                , <&kp TAB &kp HOME>
+                , <&mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000)>
                 ;
         )
 
@@ -119,21 +149,22 @@
             wait-ms = <30>;
             tap-ms = <40>;
             bindings
-                = <&kp LS(TAB)>
-                , <&macro_wait_time 200>
-                , <&kp LS(TAB)>
-                , <&macro_wait_time 100>
-                , <&kp DOWN>
-                , <&macro_wait_time 30>
+                = <&kp LS(TAB) &kp LS(TAB) &kp DOWN>
                 , <&kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB)>
-                , <&macro_wait_time 3000>
-                , <&kp ENTER>
-                , <&macro_wait_time 50>
-                , <&kp LS(TAB) &kp LS(TAB)>
                 , <&macro_wait_time 1000>
-                , <&kp HOME>
+                , <&kp ENTER>
                 , <&macro_wait_time 30>
-                , <&kp TAB &kp END>
+                , <&mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000)>
+                , <&macro_wait_time 400>
+                , <&mmv MOVE_Y(30000)>
+                , <&macro_wait_time 30>
+                , <&mkp LCLK>
+                , <&kp LS(TAB) &kp LS(TAB)>
+                , <&macro_wait_time 3000>
+                , <&kp END>
+                , <&macro_wait_time 30>
+                , <&kp TAB &kp HOME>
+                , <&mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000)>
                 ;
         )
 
@@ -141,23 +172,22 @@
             wait-ms = <30>;
             tap-ms = <40>;
             bindings
-                = <&kp LS(TAB)>
-                , <&macro_wait_time 200>
-                , <&kp LS(TAB)>
-                , <&macro_wait_time 30>
-                , <&kp DOWN>
-                , <&macro_wait_time 100>
-                , <&kp DOWN>
-                , <&macro_wait_time 30>
+                = <&kp LS(TAB) &kp LS(TAB) &kp DOWN &kp DOWN>
                 , <&kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB)>
-                , <&macro_wait_time 3000>
-                , <&kp ENTER>
-                , <&macro_wait_time 50>
-                , <&kp LS(TAB) &kp LS(TAB)>
                 , <&macro_wait_time 1000>
-                , <&kp HOME>
+                , <&kp ENTER>
                 , <&macro_wait_time 30>
-                , <&kp TAB &kp END>
+                , <&mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000)>
+                , <&macro_wait_time 400>
+                , <&mmv MOVE_Y(30000)>
+                , <&macro_wait_time 30>
+                , <&mkp LCLK>
+                , <&kp LS(TAB) &kp LS(TAB)>
+                , <&macro_wait_time 3000>
+                , <&kp END>
+                , <&macro_wait_time 30>
+                , <&kp TAB &kp HOME>
+                , <&mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000)>
                 ;
         )
 
@@ -165,32 +195,30 @@
             wait-ms = <30>;
             tap-ms = <40>;
             bindings
-                = <&kp LS(TAB)>
-                , <&macro_wait_time 200>
-                , <&kp LS(TAB)>
-                , <&macro_wait_time 30>
-                , <&kp DOWN &kp DOWN>
-                , <&macro_wait_time 100>
-                , <&kp DOWN>
-                , <&macro_wait_time 30>
+                = <&kp LS(TAB) &kp LS(TAB) &kp DOWN &kp DOWN &kp DOWN>
                 , <&kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB)>
-                , <&macro_wait_time 3000>
-                , <&kp ENTER>
-                , <&macro_wait_time 50>
-                , <&kp LS(TAB) &kp LS(TAB)>
                 , <&macro_wait_time 1000>
-                , <&kp HOME>
+                , <&kp ENTER>
                 , <&macro_wait_time 30>
-                , <&kp TAB &kp END>
+                , <&mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000) &mmv MOVE_X(30000)>
+                , <&macro_wait_time 400>
+                , <&mmv MOVE_Y(30000)>
+                , <&macro_wait_time 30>
+                , <&mkp LCLK>
+                , <&kp LS(TAB) &kp LS(TAB)>
+                , <&macro_wait_time 3000>
+                , <&kp END>
+                , <&macro_wait_time 30>
+                , <&kp TAB &kp HOME>
+                , <&mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000) &mmv MOVE_X(-30000)>
                 ;
         )
-
     };
 
     behaviors {
-        tcr_ng_nx: tcr_ng_nx {
+        tcr_dwg_fam: tcr_dwg_fam {
             compatible = "zmk,behavior-hold-tap";
-            bindings = <&tcr_nx>, <&tcr_ng>;
+            bindings = <&tcr_fam>, <&tcr_dwg>;
             #binding-cells = <2>;
             tapping-term-ms = <300>;
         };
@@ -217,14 +245,14 @@
 
         lower {
 /*  -------------------------------------------------------------   -------------------------------------------------------------
-    |         |         | tcr_fam |    F8   |  Ctrl+Y |PSCR OCL |   |TCR_NG_NX|  tcr_a  |  tcr_b  |  tcr_c  |  PSCRN  |   INS   |
-    |   CAPS  |    !    |    @    |    #    |    $    |    %    |   |   LEFT  |   DOWN  |    UP   |  RIGHT  |    {    |    }    |
-    |         |    ^    |    &    |    (    |    )    |    ~    |   |   HOME  |  PG_DN  |  PG_UP  |   END   |    |    |   APP   |
-    --------------------|  ENTER  |   DEL   |         |BSPC CTL |   | DEL CTL |  adjust |HENK SFT |  UP SFT |--------------------
+    | win_id  | tcr_nx  | DWG_FAM |    F8   |  Ctrl+Y |PSCR OCL |   | tcr_ng  |  tcr_a  |  tcr_b  |  tcr_c  |  PSCRN  |   INS   |
+    |  CAPS   |    !    |    @    |    #    |    $    |    %    |   |   LEFT  |   DOWN  |    UP   |  RIGHT  |    {    |    }    |
+    |  CLCL   |    ^    |    &    |    (    |    )    |    ~    |   |   HOME  |  PG_DN  |  PG_UP  |   END   |    |    |   APP   |
+    --------------------|  ENTER  |   DEL   |  xxxxx  |BSPC CTL |   | DEL CTL |  adjust |HENK SFT |  UP SFT |--------------------
                         -----------------------------------------   -----------------------------------------
 */
             bindings = <
-    &none          &none         &tcr_fam     &kp F8       &kp LC(Y)    OCL_PSCR          TCR_NG_NX  &tcr_a     &tcr_b     &tcr_c     &kp PSCRN    &kp INS
+    &win_id        &tcr_nx       TCR_DWG_FAM  &kp F8       &kp LC(Y)    OCL_PSCR          &tcr_ng    &tcr_a     &tcr_b     &tcr_c     &kp PSCRN    &kp INS
     &kp LS(CAPS)   &kp EXCL      &kp JP_AT    &kp HASH     &kp DLLR     &kp PRCNT         &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &kp JP_LBKT  &kp JP_RBKT
     &kp LC(LS(A))  &kp JP_CARET  &kp JP_AMPS  &kp JP_LPAR  &kp JP_RPAR  &kp JP_TILDE      &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp JP_PIPE  &kp K_APP
                                  &kp ENTER    &kp DEL      &trans       &trans            &trans     &mo ADJT   &trans     &none
@@ -236,7 +264,7 @@
     |    F1   |    F2   |    F3   |    F4   |    F5   |    F6   |   |    `    |    =    |    +    |  ASTER  |    /    |    -    |
     |         |    1    |    2    |    3    |    4    |    5    |   |    6    |    7    |    8    |    9    |    0    |    \    |
     |  F7 GUI |    F8   |    F9   |   F10   |   F11   |   F12   |   |    [    |    ]    |    ,    |    .    |         |         |
-    --------------------|         |         |  adjust |BSPC CTL |   | DEL CTL |         |         |         |--------------------
+    --------------------|         |         |  adjust |BSPC CTL |   | DEL CTL |  xxxxx  |         |         |--------------------
                         -----------------------------------------   -----------------------------------------
 */
             bindings = <
@@ -250,16 +278,16 @@
         adjust {
 /*  -------------------------------------------------------------   -------------------------------------------------------------
     | SOFT_OFF| SCRL_UP |  RCLK   |   UP    |  LCLK   |         |   |         |    7    |    8    |    9    | RGB_TOG | RGB_EFF |
-    |  BT_CLR | SCRL_DW |  LEFT   |  DOWN   |  RIGHT  |         |   |         |    4    |    5    |    6    | RGB_HUI | RGB_BRI |
-    |  BT_NXT |         |         |         |         |         |   |    0    |    1    |    2    |    3    | RGB_HUD | RGB_BRD |
-    --------------------|         |         |         |BSPC CTL |   | DEL CTL |    ,    |    .    |         |--------------------
+    | BT_SEL0 | SCRL_DW |  LEFT   |  DOWN   |  RIGHT  |         |   |         |    4    |    5    |    6    | RGB_HUI | RGB_BRI |
+    | BT_NXT  | BT_CLR  |         |         |         |         |   |    0    |    1    |    2    |    3    | RGB_HUD | RGB_BRD |
+    --------------------|         |         |  xxxxx  |BSPC CTL |   | DEL CTL |  xxxxx  |    ,    |    .    |--------------------
                         -----------------------------------------   -----------------------------------------
 */
             bindings = <
-    &soft_off   &msc SCRL_UP    &mkp RCLK       &mmv MOVE_UP    &mkp LCLK        &none       &none      &kp KP_N7  &kp KP_N8  &kp KP_N9  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF
-    &bt BT_CLR  &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none       &none      &kp KP_N4  &kp KP_N5  &kp KP_N6  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI
-    &bt BT_NXT  &none           &none           &none           &none            &none       &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD
-                                &none  &none    &trans          &trans           &trans      &trans     &kp COMMA  &kp DOT
+    &soft_off    &msc SCRL_UP    &mkp RCLK       &mmv MOVE_UP    &mkp LCLK        &none       &none      &kp KP_N7  &kp KP_N8  &kp KP_N9  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF
+    &bt BT_SEL 0 &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none       &none      &kp KP_N4  &kp KP_N5  &kp KP_N6  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI
+    &bt BT_NXT   &bt BT_CLR      &none           &none           &none            &none       &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD
+                                 &none           &none           &trans           &trans      &trans     &trans     &kp COMMA  &kp DOT
             >;
         };
     };
